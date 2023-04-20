@@ -20,7 +20,8 @@ function TodoApp({ initialTodos }) {
 
   /** add a new todo to list */
   function create(newTodo) {
-    setTodos(curr => [...curr, newTodo]);
+    const newTodoWithId = { ...newTodo, id: uuid() };
+    setTodos(curr => [...curr, newTodoWithId ]);
   }
 
   /** update a todo with updatedTodo */
@@ -44,20 +45,22 @@ function TodoApp({ initialTodos }) {
       <div className="row">
 
         <div className="col-md-6">
-          <EditableTodoList /> OR
-          <span className="text-muted">You have no todos.</span>
+          {todos.length > 0
+            ? <EditableTodoList />
+            : <span className="text-muted">You have no todos.</span>}
         </div>
 
         <div className="col-md-6">
-          (if no top todo, omit this whole section)
-          <section className="mb-4">
-            <h3>Top Todo</h3>
-            <TopTodo />
-          </section>
+
+          {(todos.length > 0) &&
+            <section className="mb-4">
+              <h3>Top Todo</h3>
+              <TopTodo />
+            </section>}
 
           <section>
             <h3 className="mb-3">Add Nü</h3>
-            <TodoForm handleSave={handleSave}>
+            <TodoForm handleSave={handleSave} />
           </section>
         </div>
 
