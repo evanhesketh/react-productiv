@@ -26,10 +26,11 @@ function EditableTodo({todo, update, remove}) {
     remove(todo.id);
    }
 
+   // FIXME:
   /** Edit form saved; toggle isEditing and update in ancestor. */
   function handleSave(formData) {
     toggleEdit();
-    update(todo);
+    update(formData);
    }
 
   return (
