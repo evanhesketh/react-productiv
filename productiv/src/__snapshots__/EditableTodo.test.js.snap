@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditableTodo matches snapshot on initial render 1`] = `
+<DocumentFragment>
+  <div
+    class="EditableTodo"
+  >
+    <div
+      class="mb-3"
+    >
+      <div
+        class="float-end text-sm-end"
+      >
+        <button
+          class="EditableTodo-toggle btn-link btn btn-sm"
+        >
+          Edit
+        </button>
+        <button
+          class="EditableTodo-delBtn btn-link btn btn-sm text-danger"
+        >
+          Del
+        </button>
+      </div>
+      <div
+        class="Todo"
+      >
+        <div>
+          <b>
+            Test todo
+          </b>
+           
+          <small>
+            Priority: 1
+          </small>
+        </div>
+        <div>
+          <small>
+            Test description
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
