@@ -29,8 +29,12 @@ describe("EditableTodo", function () {
     const mockDelete = jest.fn();
     const { container } = render(<EditableTodo todo={testTodo} remove={mockDelete} />);
     const deleteBtn = container.querySelector('.EditableTodo-delBtn');
+
+    // TODO: test mock hasnt been called and was called after
     fireEvent.click(deleteBtn);
 
     expect(mockDelete).toHaveBeenCalledTimes(1);
   });
+
+  // TODO: could add test for update - form should appear when edit btn clicked
 });
